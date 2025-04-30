@@ -1,4 +1,4 @@
-﻿
+
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -28,20 +28,19 @@ namespace kurs.Controllers
 
             var zakazs = from z in _context.Zakaz select z;
 
-            // Apply search filters
+           
             if (searchDate.HasValue)
             {
-                // Преобразуйте дату поиска в UTC перед сравнением
                 var utcSearchDate = searchDate.Value.ToUniversalTime();
                 zakazs = zakazs.Where(z => z.ZakazData.Date == utcSearchDate.Date);
             }
             if (searchSum.HasValue)
             {
-                // Необходимо преобразовать сумму также, если она хранится как decimal
+                
                 zakazs = zakazs.Where(z => z.ZakazSumma == searchSum.Value);
             }
 
-            // Apply sorting
+         
             switch (sortOrder)
             {
                 case "date_desc":
@@ -70,7 +69,6 @@ namespace kurs.Controllers
             return View(zakazs.ToList());
         }
 
-        // GET: Zakaz/Add
         public IActionResult Add()
         {
             ViewData["IdDostavka"] = new SelectList(_context.Dostavka, "IdDostavka", "IdDostavka");
@@ -86,7 +84,7 @@ namespace kurs.Controllers
             {
                 try
                 {
-                    // Убедитесь, что ZakazData установлен как UTC
+                   
                     zakaz.ZakazData = DateTime.SpecifyKind(zakaz.ZakazData, DateTimeKind.Utc);
 
                     _context.Zakaz.Add(zakaz);
@@ -95,9 +93,9 @@ namespace kurs.Controllers
                 }
                 catch (DbUpdateException ex)
                 {
-                    // Зарегистрируйте исключение или обработайте его соответственно
+                  
                     ModelState.AddModelError("", "Произошла ошибка при сохранении заказа. Пожалуйста, попробуйте позже.");
-                    // Вы также можете зарегистрировать подробности исключения для целей отладки
+                    
                     Console.WriteLine(ex.InnerException?.Message);
                 }
             }
@@ -108,7 +106,7 @@ namespace kurs.Controllers
         }
 
        
-        // GET: Zakaz/Edit/5
+     
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -133,7 +131,7 @@ namespace kurs.Controllers
             return View(zakaz);
         }
 
-        // POST: Zakaz/Edit/5
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdZakaz,ZakazData,ZakazSumma,IdPokupatel,IdSborschikZakaza,IdDostavka")] Zakaz zakaz)
@@ -147,7 +145,6 @@ namespace kurs.Controllers
             {
                 try
                 {
-                    // Убедитесь, что ZakazData установлен как UTC
                     zakaz.ZakazData = DateTime.SpecifyKind(zakaz.ZakazData, DateTimeKind.Utc);
 
                     _context.Update(zakaz);
@@ -177,7 +174,7 @@ namespace kurs.Controllers
             return _context.Zakaz.Any(e => e.IdZakaz == id);
         }
 
-        // GET: Zakaz/Delete/5
+     
         public IActionResult Delete(int id)
         {
             var zakaz = _context.Zakaz.Find(id);
@@ -186,7 +183,7 @@ namespace kurs.Controllers
             return View(zakaz);
         }
 
-        // POST: Zakaz/Delete/5
+     
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
@@ -201,12 +198,12 @@ namespace kurs.Controllers
                 }
                 catch (DbUpdateException ex) when (ex.InnerException is PostgresException pgEx && pgEx.SqlState == "23503")
                 {
-                    // Перенаправление на страницу с предупреждением об ошибке
+                  
                     return RedirectToAction(nameof(DeleteError));
                 }
                 catch (Exception ex)
                 {
-                    // Логирование и обработка других исключений
+                    
                     Console.WriteLine("Unexpected error details: " + ex.ToString());
                     return RedirectToAction(nameof(DeleteError));
                 }
@@ -214,7 +211,7 @@ namespace kurs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Страница для отображения ошибки удаления
+        
         public IActionResult DeleteError()
         {
             return View();
@@ -241,11 +238,11 @@ namespace kurs.Controllers
 
         public IActionResult Reports()
         {
-            // Общая сумма заказов
+           
             var totalSum = _context.Zakaz.Sum(z => z.ZakazSumma);
             ViewData["TotalSum"] = totalSum;
 
-            // Количество заказов по дате
+           
             var orderCountByDate = _context.Zakaz
                 .GroupBy(z => z.ZakazData.Date)
                 .Select(g => new
@@ -257,12 +254,11 @@ namespace kurs.Controllers
                 .ToList();
             ViewData["OrderCountByDate"] = orderCountByDate;
 
-            // Средняя сумма заказов
+           
             var averageSum = _context.Zakaz.Average(z => z.ZakazSumma);
             ViewData["AverageSum"] = averageSum;
 
            
-            // Количество заказов по покупателю
             var orderCountByCustomer = _context.Zakaz
                 .GroupBy(z => new { z.IdPokupatel, z.IdPokupatelNavigation.PokupatelFio })
                 .Select(g => new
@@ -276,7 +272,8 @@ namespace kurs.Controllers
 
             return View();
         }
-        // GET: Zakaz/Details/5
+     
+
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -299,4 +296,5 @@ namespace kurs.Controllers
         }
     }
 }
+
 
