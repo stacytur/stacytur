@@ -35,16 +35,3 @@ namespace kurs.Models
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//[StringLength(100, ErrorMessage = "Имя сборщика заказа не должно превышать 100 символов")]
