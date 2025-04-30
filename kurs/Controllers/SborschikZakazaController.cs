@@ -43,7 +43,7 @@ namespace kurs.Controllers
                 sborschikZakazas = sborschikZakazas.Where(s => s.SborschikZakazaNames.Contains(searchName));
             }
 
-            // Apply sorting
+          
             switch (sortOrder)
             {
                 case "phone_desc":
@@ -65,7 +65,7 @@ namespace kurs.Controllers
 
             return View(await sborschikZakazas.AsNoTracking().ToListAsync());
         }
-        // GET: SborschikZakaza/Details/5
+      
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.SborschikZakaza == null)
@@ -83,13 +83,13 @@ namespace kurs.Controllers
             return View(sborschikZakaza);
         }
 
-        // GET: SborschikZakaza/Create
+      
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: SborschikZakaza/Create
+ 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdSborschikZakaza,SborschikZakazaTelefon,SborschikZakazaNames")] SborschikZakaza sborschikZakaza)
@@ -103,7 +103,7 @@ namespace kurs.Controllers
             return View(sborschikZakaza);
         }
 
-        // GET: SborschikZakaza/Edit/5
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.SborschikZakaza == null)
@@ -119,7 +119,7 @@ namespace kurs.Controllers
             return View(sborschikZakaza);
         }
 
-        // POST: SborschikZakaza/Edit/5
+   
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdSborschikZakaza,SborschikZakazaTelefon,SborschikZakazaNames")] SborschikZakaza sborschikZakaza)
@@ -152,7 +152,7 @@ namespace kurs.Controllers
             return View(sborschikZakaza);
         }
 
-        // GET: SborschikZakaza/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.SborschikZakaza == null)
@@ -170,7 +170,7 @@ namespace kurs.Controllers
             return View(sborschikZakaza);
         }
 
-        // POST: SborschikZakaza/Delete/5
+      
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -190,7 +190,7 @@ namespace kurs.Controllers
                 }
                 catch (DbUpdateException ex) when (ex.InnerException is PostgresException pgEx && pgEx.SqlState == "23503")
                 {
-                    // Перенаправление на страницу с предупреждением об ошибке
+                   
                     return RedirectToAction(nameof(DeleteError));
                 }
             }
@@ -198,7 +198,7 @@ namespace kurs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Страница для отображения ошибки удаления
+        
         public IActionResult DeleteError()
         {
             return View();
