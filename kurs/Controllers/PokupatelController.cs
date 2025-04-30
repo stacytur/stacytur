@@ -20,7 +20,6 @@ namespace kurs.Controllers
             _context = context;
         }
 
-        // GET: Pokupatel
 
         
         public async Task<IActionResult> Index(string sortOrder, string searchPhone, string searchName, string searchAddress)
@@ -37,7 +36,7 @@ namespace kurs.Controllers
 
             var pokupatels = from p in _context.Pokupatel select p;
 
-            // Apply search filters
+         
             if (!String.IsNullOrEmpty(searchPhone))
             {
                 pokupatels = pokupatels.Where(p => p.PokupatelTelefon.ToString().Contains(searchPhone));
@@ -53,7 +52,7 @@ namespace kurs.Controllers
                 pokupatels = pokupatels.Where(p => p.PokupatelAdresDostavki.Contains(searchAddress));
             }
 
-            // Apply sorting
+          
             switch (sortOrder)
             {
                 case "name_desc":
@@ -81,7 +80,7 @@ namespace kurs.Controllers
 
             return View(await pokupatels.ToListAsync());
         }
-        // GET: Pokupatel/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Pokupatel == null)
@@ -99,15 +98,13 @@ namespace kurs.Controllers
             return View(pokupatel);
         }
 
-        // GET: Pokupatel/Create
+      
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Pokupatel/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdPokupatel,PokupatelFio,PokupatelTelefon,PokupatelAdresDostavki")] Pokupatel pokupatel)
@@ -122,54 +119,7 @@ namespace kurs.Controllers
         }
 
 
-        // GET: Pokupatel/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var pokupatel = await _context.Pokupatel.FindAsync(id);
-        //    if (pokupatel == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(pokupatel);
-        //}
-
-        //// POST: Pokupatel/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("IdPokupatel,PokupatelFio,PokupatelTelefon,PokupatelAdresDostavki")] Pokupatel pokupatel)
-        //{
-        //    if (id != pokupatel.IdPokupatel)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(pokupatel);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!PokupatelExists(pokupatel.IdPokupatel))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(pokupatel);
-        //}
+        
 
         public IActionResult Edit(int id)
         {
@@ -180,7 +130,7 @@ namespace kurs.Controllers
             return View(pokupatel);
         }
 
-        // POST: Tovar/Edit/5
+     
         [HttpPost]
         public IActionResult Edit(int id, Pokupatel pokupatel)
         {
@@ -196,7 +146,7 @@ namespace kurs.Controllers
             return View(pokupatel);
         }
 
-        // GET: Pokupatel/Delete/5
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Pokupatel == null)
@@ -214,7 +164,7 @@ namespace kurs.Controllers
             return View(pokupatel);
         }
 
-        // POST: Pokupatel/Delete/5
+ 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -234,7 +184,7 @@ namespace kurs.Controllers
                 }
                 catch (DbUpdateException ex) when (ex.InnerException is PostgresException pgEx && pgEx.SqlState == "23503")
                 {
-                    // Перенаправление на страницу с предупреждением об ошибке
+                    
                     return RedirectToAction(nameof(DeleteError));
                 }
             }
@@ -242,7 +192,7 @@ namespace kurs.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Страница для отображения ошибки удаления
+    
         public IActionResult DeleteError()
         {
             return View();
