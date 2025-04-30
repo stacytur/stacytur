@@ -1,8 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+
 @model kurs.Models.Pokupatel
 
 @{
@@ -16,7 +12,7 @@
         <tr>
             <th>Date</th>
             <th>Sum</th>
-            <!-- Другие заголовки -->
+            
         </tr>
     </thead>
     <tbody>
@@ -25,7 +21,7 @@
             <tr>
                 <td>@zakaz.ZakazData.ToString("dd.MM.yyyy")</td>
                 <td>@zakaz.ZakazSumma</td>
-                <!-- Другие ячейки -->
+               
             </tr>
         }
     </tbody>
