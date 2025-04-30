@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using kurs.Context;
 using kurs.Models;
@@ -24,7 +24,7 @@ namespace kurs.Controllers
 
             var tovars = from t in _context.Tovar select t;
 
-            // Apply search filters
+           
             if (!string.IsNullOrEmpty(searchName))
             {
                 tovars = tovars.Where(t => t.TovarNaimenovanie.Contains(searchName));
@@ -34,7 +34,7 @@ namespace kurs.Controllers
                 tovars = tovars.Where(t => t.Cena == searchPrice.Value);
             }
 
-            // Apply sorting
+      
             switch (sortOrder)
             {
                 case "cena_desc":
@@ -68,7 +68,7 @@ namespace kurs.Controllers
 
             return View(tovars.ToList());
         }
-        // GET: Tovar/Add
+      
         public IActionResult Add()
         {
             ViewData["IdZakaz"] = new SelectList(_context.Zakaz, "IdZakaz", "IdZakaz");
@@ -81,30 +81,30 @@ namespace kurs.Controllers
             {
                 try
                 {
-                    // Добавляем заказ в контекст
+                    
                     _context.Zakaz.Add(zakaz);
 
-                    // Для каждого товара в заказе устанавливаем Id заказа
+                  
                     foreach (var tovar in zakaz.Tovar)
                     {
                         tovar.IdZakaz = zakaz.IdZakaz;
                     }
 
-                    // Сохраняем изменения
+                
                     _context.SaveChanges();
 
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateException ex)
                 {
-                    // Зарегистрируйте исключение или обработайте его соответственно
+                    
                     ModelState.AddModelError("", "Произошла ошибка при сохранении заказа. Пожалуйста, попробуйте позже.");
-                    // Вы также можете зарегистрировать подробности исключения для целей отладки
+                   
                     Console.WriteLine(ex.InnerException.Message);
                 }
             }
 
-            // Если ModelState недействителен, возвращаем представление с данными заказа
+           
             ViewData["IdDostavka"] = new SelectList(_context.Dostavka, "IdDostavka", "IdDostavka", zakaz.IdDostavka);
             ViewData["IdPokupatel"] = new SelectList(_context.Pokupatel, "IdPokupatel", "PokupatelFio", zakaz.IdPokupatel);
             ViewData["IdSborschikZakaza"] = new SelectList(_context.SborschikZakaza, "IdSborschikZakaza", "SborschikZakazaNames", zakaz.IdSborschikZakaza);
@@ -112,7 +112,7 @@ namespace kurs.Controllers
         }
         
 
-        // GET: Tovar/Edit/5
+     
         public IActionResult Edit(int id)
         {
             var tovar = _context.Tovar.Find(id);
@@ -122,7 +122,7 @@ namespace kurs.Controllers
             return View(tovar);
         }
 
-        // POST: Tovar/Edit/5
+  
         [HttpPost]
         public IActionResult Edit(int id, Tovar tovar)
         {
@@ -138,7 +138,7 @@ namespace kurs.Controllers
             return View(tovar);
         }
 
-        // GET: Tovar/Delete/5
+   
         public IActionResult Delete(int id)
         {
             var tovar = _context.Tovar.Find(id);
@@ -147,7 +147,8 @@ namespace kurs.Controllers
             return View(tovar);
         }
 
-        // POST: Tovar/Delete/5
+
+
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
