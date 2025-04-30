@@ -1,0 +1,35 @@
+﻿@model kurs.Models.Dostavka
+
+<h1>Удалить доставку</h1>
+
+<h3>Вы уверены, что хотите удалить эту доставку?</h3>
+<div>
+    <h4>Доставка:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataPolucheniya)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataPolucheniya)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OjdaemayaData)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OjdaemayaData)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusDostavki)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusDostavki)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdDostavka" />
+        <button type="submit" class="btn btn-danger">Удалить</button>
+        <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>

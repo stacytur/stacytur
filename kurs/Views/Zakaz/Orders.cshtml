@@ -1,0 +1,29 @@
+﻿@model kurs.Models.Zakaz
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>Orders for @Model.IdZakaz</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Наименование</th>
+            <th>Количество</th>
+            <th>Цена</th>
+            <!-- Другие заголовки -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tovar in Model.Tovar)
+        {
+                <tr>
+                        <td>@tovar.TovarNaimenovanie</td>
+                            <td>@tovar.Kolichestvo</td>
+                        <td>@tovar.Cena</td>
+                            
+                 
+                </tr>
+        }
+    </tbody>
+</table>

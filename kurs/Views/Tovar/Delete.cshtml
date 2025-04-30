@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model kurs.Models.Tovar
+
+@{
+    ViewData["Title"] = "Удалить товар";
+}
+
+<h2>Вы уверены, что хотите удалить этот товар?</h2>
+
+<table class="table">
+    <tr>
+        <th>ID товара</th>
+        <td>@Model.IdTovar</td>
+    </tr>
+    <tr>
+        <th>Цена</th>
+        <td>@Model.Cena</td>
+    </tr>
+    <tr>
+        <th>Количество</th>
+        <td>@Model.Kolichestvo</td>
+    </tr>
+    <tr>
+        <th>Наименование товара</th>
+        <td>@Model.TovarNaimenovanie</td>
+    </tr>
+    <tr>
+        <th>ID заказа</th>
+        <td>@Model.IdZakaz</td>
+    </tr>
+</table>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.IdTovar" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

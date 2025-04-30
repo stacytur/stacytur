@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model kurs.Models.Tovar
+
+@{
+    ViewData["Title"] = "Изменить товар";
+}
+
+<h2>Изменить товар</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="IdTovar" value="@Model.IdTovar" />
+
+    <div class="form-group">
+        <label for="Cena">Цена:</label>
+        <input type="number" step="any" name="Cena" class="form-control" value="@Model.Cena" required />
+        <span asp-validation-for="Cena" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Kolichestvo">Количество:</label>
+        <input type="number" name="Kolichestvo" class="form-control" value="@Model.Kolichestvo" required />
+        <span asp-validation-for="Kolichestvo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="TovarNaimenovanie">Наименование товара:</label>
+        <input type="text" name="TovarNaimenovanie" class="form-control" value="@Model.TovarNaimenovanie" required />
+        <span asp-validation-for="TovarNaimenovanie" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="IdZakaz">ID заказа:</label>
+        <select name="IdZakaz" class="form-control" asp-items="ViewBag.IdZakaz"></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>

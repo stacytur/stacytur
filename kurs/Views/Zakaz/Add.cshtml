@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model kurs.Models.Zakaz
+
+@{
+    ViewData["Title"] = "Добавить заказ";
+}
+
+<h2>Добавить новый заказ</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label for="ZakazData">Дата заказа:</label>
+        <input type="date" name="ZakazData" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ZakazSumma">Сумма заказа:</label>
+        <input type="number" step="any" name="ZakazSumma" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="IdPokupatel">Покупатель:</label>
+        <select name="IdPokupatel" class="form-control">
+            @foreach (var item in ViewBag.IdPokupatel as SelectList)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="IdSborschikZakaza">Сборщик заказа:</label>
+        <select name="IdSborschikZakaza" class="form-control">
+            @foreach (var item in ViewBag.IdSborschikZakaza as SelectList)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="IdDostavka">Доставка:</label>
+        <select name="IdDostavka" class="form-control">
+            @foreach (var item in ViewBag.IdDostavka as SelectList)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Добавить заказ</button>
+    
+</form>

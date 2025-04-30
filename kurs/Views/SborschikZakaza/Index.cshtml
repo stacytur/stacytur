@@ -1,0 +1,66 @@
+﻿
+@model IEnumerable<kurs.Models.SborschikZakaza>
+
+@{
+    ViewData["Title"] = "Список работников";
+}
+
+<h1>Список работников</h1>
+
+<a asp-controller="SborschikZakaza" asp-action="Create" class="btn btn-primary">Добавить нового работника</a>
+
+<form asp-action="Index" method="get" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <label for="searchPhone" class="mr-2">Search by Phone:</label>
+        <input type="text" name="searchPhone" id="searchPhone" value="@ViewData["CurrentSearchPhone"]" class="form-control" />
+    </div>
+    <div class="form-group mr-2">
+        <label for="searchName" class="mr-2">Search by Name:</label>
+        <input type="text" name="searchName" id="searchName" value="@ViewData["CurrentSearchName"]" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Reset</a>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]">ID</a></th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PhoneSortParm"]">
+                    @Html.DisplayNameFor(model => model.SborschikZakazaTelefon)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">
+                    @Html.DisplayNameFor(model => model.SborschikZakazaNames)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdSborschikZakaza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SborschikZakazaTelefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SborschikZakazaNames)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdSborschikZakaza" class="btn btn-info">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.IdSborschikZakaza" class="btn btn-danger">Delete</a>
+                    <a asp-controller="SborschikZakaza" asp-action="Orders" asp-route-id="@item.IdSborschikZakaza" class="btn btn-primary">View Orders</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center mt-5">
+    <img src="~/images/niz5.jpg" alt="Bottom Image" class="img-fluid" />
+</div>

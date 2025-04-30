@@ -1,0 +1,57 @@
+﻿
+@using kurs.Models
+@model IEnumerable<kurs.Models.Zakaz>
+
+<h2>Список заказов</h2>
+<a asp-controller="Zakaz" asp-action="Add" class="btn btn-primary">Добавить новый заказ</a>
+<form asp-action="Index" method="get" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <label for="searchDate" class="mr-2">Search by Date:</label>
+        <input type="date" name="searchDate" id="searchDate" class="form-control" />
+    </div>
+    <div class="form-group mr-2">
+        <label for="searchSum" class="mr-2">Search by Sum:</label>
+        <input type="number" name="searchSum" id="searchSum" step="0.01" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Reset</a>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]">ID</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]">Order Date</a></th>
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["SumSortParm"]">Order Sum</a></th>
+            <th>Customer ID</th>
+            <th>Assembler ID</th>
+            <th>Delivery ID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody> 
+        @foreach (var zakaz in Model)
+        {
+            <tr>
+                <td>@zakaz.IdZakaz</td>
+                <td>@zakaz.ZakazData.ToString("dd.MM.yyyy")</td>
+                <td>@zakaz.ZakazSumma</td>
+                <td>@zakaz.IdPokupatel</td>
+                <td>@zakaz.IdSborschikZakaza</td>
+                <td>@zakaz.IdDostavka</td>
+                <td>
+                    @*<div class="btn-group">*@
+                        <a asp-action="Edit" asp-route-id="@zakaz.IdZakaz" class="btn btn-info">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@zakaz.IdZakaz" class="btn btn-danger">Delete</a>
+                        <a asp-action="Details" asp-route-id="@zakaz.IdZakaz" class="btn btn-info">Details</a>
+                        <a asp-controller="Zakaz" asp-action="Orders" asp-route-id="@zakaz.IdZakaz" class="btn btn-primary">Посмотреть товары</a>
+                    @*</div>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-center mt-5">
+    <img src="~/images/niz2.jpg" alt="Bottom Image" class="img-fluid" />
+</div>

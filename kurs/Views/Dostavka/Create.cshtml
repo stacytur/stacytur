@@ -1,0 +1,25 @@
+﻿
+@model kurs.Models.Dostavka
+
+<h1>Создать новую доставку</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="DataPolucheniya" class="control-label"></label>
+        <input asp-for="DataPolucheniya" type="date" class="form-control" />
+        <span asp-validation-for="DataPolucheniya" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OjdaemayaData" class="control-label"></label>
+        <input asp-for="OjdaemayaData" type="date" class="form-control" />
+        <span asp-validation-for="OjdaemayaData" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StatusDostavki" class="control-label"></label>
+        <input asp-for="StatusDostavki" class="form-control" />
+        <span asp-validation-for="StatusDostavki" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Создать" class="btn btn-primary" />
+    </div>
+</form>

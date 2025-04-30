@@ -1,0 +1,114 @@
+﻿body {
+    background-color: #e9f3ee; /* Нежно-розовый задний  фон */
+    color: #5e1942; /* Темный текст */
+   /* font-family: 'Dancing Script', cursive;*/ /* Читабельный изящный шрифт */
+}
+
+.navbar {
+    background-color: rgba(255, 192, 203, 0.5); /* Нежно-розовый цвет для навигационной панели */
+    border-bottom: 2px solid #cceed9; /* Персиковый цвет для границы */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4A4A4A; /* Темный текст для ссылки */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4A4A4A; /* Темный текст для ссылок */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.footer {
+    background-color: rgba(255, 192, 203, 0.5); /* Нежно-розовый цвет для подвала */
+    padding: 20px 0;
+    color: #4A4A4A; /* Темный текст для подвала */
+    border-top: 2px solid #FFDAB9; /* Персиковый цвет для границы */
+}
+
+/*header {
+    background-image: url('C:\Users\lenovo\Documents\программирование\шарп\kurs\kurs\wwwroot\images\holographic-11.jpg');*/ /* Путь к вашему изображению для фона заголовка */
+    /*background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}*/
+
+.container main {
+    background-color: #FFF5F7; /* Нежно-розовый фон для основного контента */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Общий стиль для таблицы */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #4A4A4A; /* Темный текст */
+}
+
+    /* Стиль заголовка таблицы */
+    .table th {
+        font-weight: bold;
+        background-color: #cba4b2; /* строка под названиями столбцов */
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Стиль строк таблицы */
+    .table td {
+        padding: 10px;
+    }
+
+/* Стиль для кнопок */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Стиль для ссылок в таблице */
+.table a {
+    color: #4A4A4A;  Темный текст 
+    text-decoration: none;
+}
+
+/* Стили для кнопок разных цветов */
+.btn-primary {
+    color: white;
+    background-color: #9ec7b1; /* кнопка поиска и просмотр ключей цвет */
+    border-color: #9ec7b1; /* Синий цвет */
+}
+
+.btn-success {
+    color: white;
+    background-color: #aecba4; /* Зеленый цвет */
+    border-color: #aecba4; /* Зеленый цвет */
+}
+
+.btn-danger {
+    color: white;
+    background-color: #c79eb4; /* кнопка удаления цвет */
+    border-color: #c79eb4; /* Красный цвет */
+}
+
+.btn-info {
+    color: white;
+    background-color: #e0c9d9; /*кнопка изменения цвет */
+    border-color: #e0c9d9; /*Голубой цвет */
+}
+
+/* Стиль для кнопок в строках таблицы */
+.table a.btn {
+    margin-right: 5px;
+}
+.link-title {
+    color: red; /* Изменение цвета текста на красный */
+}

@@ -1,0 +1,39 @@
+﻿@model kurs.Models.Pokupatel
+
+@{
+    ViewData["Title"] = "Удаление";
+}
+
+<h1>Delete</h1>
+
+<h3>Вы уверены что хотите удалить этого покупателя?</h3>
+<div>
+    <h4>Pokupatel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PokupatelFio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PokupatelFio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PokupatelTelefon)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PokupatelTelefon)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PokupatelAdresDostavki)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PokupatelAdresDostavki)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPokupatel" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

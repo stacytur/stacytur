@@ -1,0 +1,339 @@
+﻿@model kurs.Models.Zakaz
+@{
+    ViewData["Title"] = "Редактировать заказ";
+}
+
+<h2>Редактировать заказ</h2>
+
+<h4>Заказ</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdZakaz" />
+            <div class="form-group">
+                <label asp-for="ZakazData" class="control-label"></label>
+                <input asp-for="ZakazData" class="form-control" />
+                <span asp-validation-for="ZakazData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZakazSumma" class="control-label"></label>
+                <input asp-for="ZakazSumma" class="form-control" />
+                <span asp-validation-for="ZakazSumma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPokupatel" class="control-label"></label>
+                <select asp-for="IdPokupatel" class="form-control" asp-items="ViewBag.IdPokupatel"></select>
+                <span asp-validation-for="IdPokupatel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdSborschikZakaza" class="control-label"></label>
+                <select asp-for="IdSborschikZakaza" class="form-control" asp-items="ViewBag.IdSborschikZakaza"></select>
+                <span asp-validation-for="IdSborschikZakaza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdDostavka" class="control-label"></label>
+                <select asp-for="IdDostavka" class="form-control" asp-items="ViewBag.IdDostavka"></select>
+                <span asp-validation-for="IdDostavka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@model kurs.Models.Zakaz
+
+@{
+    ViewData["Title"] = "Список заказов";
+}
+
+<h2>Изменение заказа</h2>
+
+<form id="editForm" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IdZakaz" />
+
+    <div class="form-group">
+        <label asp-for="ZakazData">Order Date:</label>
+        <input asp-for="ZakazData" class="form-control" type="date" required />
+        <span asp-validation-for="ZakazData" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ZakazSumma">Order Sum:</label>
+        <input asp-for="ZakazSumma" class="form-control" type="number" step="any" required />
+        <span asp-validation-for="ZakazSumma" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdPokupatel">Customer ID:</label>
+        <select asp-for="IdPokupatel" class="form-control" asp-items="ViewBag.IdPokupatel"></select>
+        <span asp-validation-for="IdPokupatel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdSborschikZakaza">Order Picker ID:</label>
+        <select asp-for="IdSborschikZakaza" class="form-control" asp-items="ViewBag.IdSborschikZakaza"></select>
+        <span asp-validation-for="IdSborschikZakaza" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdDostavka">Delivery ID:</label>
+        <select asp-for="IdDostavka" class="form-control" asp-items="ViewBag.IdDostavka"></select>
+        <span asp-validation-for="IdDostavka" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подтверждение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ваши изменения сохранены.
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-primary">На главную</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#editForm').submit(function (event) {
+                event.preventDefault();
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            $('#confirmationModal').modal('show');
+                        } else {
+                            alert(response.message || 'Произошла ошибка. Пожалуйста, попробуйте позже.');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error details:', xhr, status, error);
+                        alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+                    }
+                });
+            });
+        });
+    </script>
+}
+*@
+
+@*@model kurs.Models.Zakaz
+
+@{
+    ViewData["Title"] = "Edit Order";
+}
+
+<h2>Edit Order</h2>
+
+<form id="editForm" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IdZakaz" />
+
+    <div class="form-group">
+        <label asp-for="ZakazData">Order Date:</label>
+        <input asp-for="ZakazData" class="form-control" type="date" required />
+        <span asp-validation-for="ZakazData" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ZakazSumma">Order Sum:</label>
+        <input asp-for="ZakazSumma" class="form-control" type="number" step="any" required />
+        <span asp-validation-for="ZakazSumma" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdPokupatel">Customer ID:</label>
+        <select asp-for="IdPokupatel" class="form-control" asp-items="ViewBag.IdPokupatel"></select>
+        <span asp-validation-for="IdPokupatel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdSborschikZakaza">Order Picker ID:</label>
+        <select asp-for="IdSborschikZakaza" class="form-control" asp-items="ViewBag.IdSborschikZakaza"></select>
+        <span asp-validation-for="IdSborschikZakaza" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdDostavka">Delivery ID:</label>
+        <select asp-for="IdDostavka" class="form-control" asp-items="ViewBag.IdDostavka"></select>
+        <span asp-validation-for="IdDostavka" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подтверждение</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Ваши изменения сохранены.
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-primary">На главную</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#editForm').submit(function (event) {
+                event.preventDefault();
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            $('#confirmationModal').modal('show');
+                        } else {
+                            alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+                        }
+                    },
+                    error: function () {
+                        alert('Произошла ошибка. Пожалуйста, попробуйте позже.');
+                    }
+                });
+            });
+        });
+    </script>
+}*@@*@model kurs.Models.Zakaz
+
+@{
+    ViewData["Title"] = "Edit Order";
+}
+
+<h2>Edit Order</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="IdZakaz" value="@Model.IdZakaz" />
+
+    <div class="form-group">
+        <label for="ZakazData">Order Date:</label>
+        <input type="date" name="ZakazData" class="form-control" value="@Model.ZakazData.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ZakazSumma">Order Sum:</label>
+        <input type="number" step="any" name="ZakazSumma" class="form-control" value="@Model.ZakazSumma" required />
+    </div>
+
+    <div class="form-group">
+        <label for="IdPokupatel">Customer ID:</label>
+        <select name="IdPokupatel" class="form-control" asp-items="ViewBag.IdPokupatel"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="IdSborschikZakaza">Order Picker ID:</label>
+        <select name="IdSborschikZakaza" class="form-control" asp-items="ViewBag.IdSborschikZakaza"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="IdDostavka">Delivery ID:</label>
+        <select name="IdDostavka" class="form-control" asp-items="ViewBag.IdDostavka"></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+*@
+
+@*@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Zakaz</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdZakaz" />
+            <div class="form-group">
+                <label asp-for="IdDostavka" class="control-label"></label>
+                <select asp-for="IdDostavka" class ="form-control" asp-items="ViewBag.IdDostavka"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPokupatel" class="control-label"></label>
+                <select asp-for="IdPokupatel" class ="form-control" asp-items="ViewBag.IdPokupatel"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdSborschikZakaza" class="control-label"></label>
+                <select asp-for="IdSborschikZakaza" class ="form-control" asp-items="ViewBag.IdSborschikZakaza"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZakazData" class="control-label"></label>
+                <input asp-for="ZakazData" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ZakazSumma" class="control-label"></label>
+                <input asp-for="ZakazSumma" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

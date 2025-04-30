@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "Главная";
+}
+<style>
+    body {
+        background-color: #e9f3ee; /* Нежно-розовый задний  фон */
+        color: #5e1942; /* Темный текст */
+        font-family: 'Dancing Script', cursive; /* Читабельный изящный шрифт */
+    }   
+   
+</style>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Добро пожаловать в наш Интернет-магазин косметики “MIA MAY”</h1>
+            <p class="mt-4">
+                Наш интернет-магазин “MIA MAY” предлагает широкий ассортимент высококачественной косметики от ведущих брендов.
+                Мы стремимся предоставить вам лучшие продукты по конкурентоспособным ценам, чтобы вы могли подчеркнуть
+                свою естественную красоту и ухаживать за своей кожей и волосами.
+            </p>
+
+            <p>
+                Наши специалисты всегда готовы помочь вам с выбором продукции, чтобы вы могли найти именно то, что нужно
+                для вашего типа кожи и волос. Мы гарантируем подлинность и качество всех наших товаров.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 text-center">
+            <a asp-controller="Home" asp-action="Index2">
+                <img src="~/images/Default_generate_images_on_a_cosmetic_theme_in_pastel_colors_i_2 (1).jpg" alt="Таблица" class="img-fluid" />
+                <h3>Таблица</h3>
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <a asp-controller="Report" asp-action="Index1">
+                <img src="~/images/Default_generate_images_on_a_cosmetic_theme_in_pastel_colors_i_3 (1).jpg" alt="Отчеты" class="img-fluid" />
+                <h3>Отчеты</h3>
+            </a>
+        </div>
+    </div>
+</div>

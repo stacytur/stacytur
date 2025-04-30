@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model kurs.Models.Pokupatel
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h1>Orders for @Model.PokupatelFio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Sum</th>
+            <!-- Другие заголовки -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var zakaz in Model.Zakaz)
+        {
+            <tr>
+                <td>@zakaz.ZakazData.ToString("dd.MM.yyyy")</td>
+                <td>@zakaz.ZakazSumma</td>
+                <!-- Другие ячейки -->
+            </tr>
+        }
+    </tbody>
+</table>

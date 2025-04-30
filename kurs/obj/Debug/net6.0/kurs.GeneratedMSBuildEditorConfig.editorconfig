@@ -1,0 +1,205 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = kurs
+build_property.RootNamespace = kurs
+build_property.ProjectDir = C:\Users\lenovo\Documents\программирование\шарп\kurs\kurs\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\lenovo\Documents\программирование\шарп\kurs\kurs
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/DeleteError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcRGVsZXRlRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Dostavka/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2a2FcT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Home/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleDIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/DeleteError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXERlbGV0ZUVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Pokupatel/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rdXBhdGVsXE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Report/DeliveryReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XERlbGl2ZXJ5UmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Report/Index2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Report/SborschikReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFNib3JzY2hpa1JlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Report/TovarReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFRvdmFyUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/DeleteError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXERlbGV0ZUVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/SborschikZakaza/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2JvcnNjaGlrWmFrYXphXE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Tovar/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Tovar/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Tovar/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Tovar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/DeleteError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRGVsZXRlRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Zakaz/Reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcUmVwb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lenovo/Documents/программирование/шарп/kurs/kurs/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-z7nz24yj2o

@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<ReportViewModel>
+
+@{
+    ViewData["Title"] = "Отчеты по покупателям";
+}
+
+<h2>Отчеты по покупателям</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ФИО Покупателя</th>
+            <th>Общая сумма заказов</th>
+            <th>Средняя сумма заказа</th>
+            <th>Количество заказов</th>
+            <th>Максимальная сумма заказа</th>
+            <th>Минимальная сумма заказа</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.PokupatelFio</td>
+                <td>@report.TotalSum.ToString("F2")</td>
+                <td>@report.AverageOrderSum.ToString("F2")</td>
+                <td>@report.OrderCount</td>
+                <td>@report.MaxOrderSum.ToString("F2")</td>
+                <td>@report.MinOrderSum.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+   
+</table>
+<h3>Общая сумма покупателей:</h3>
+<p><strong>@Model.Count()</strong></p>

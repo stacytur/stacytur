@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<kurs.Models.Tovar>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчет по товарам</title>
+    <link href="~/css/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Отчет по товарам</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID товара</th>
+                <th>Наименование товара</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>ID заказа</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdTovar</td>
+                    <td>@item.TovarNaimenovanie</td>
+                    <td>@item.Cena?.ToString("F2")</td>
+                    <td>@item.Kolichestvo</td>
+                    <td>@item.IdZakaz</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Общая сумма товаров:</h3>
+    <p><strong>@Model.Count()</strong></p>
+</body>
+</html>

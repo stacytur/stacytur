@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+    var totalSum = ViewData["TotalSum"];
+    var orderCountByDate = ViewData["OrderCountByDate"] as IEnumerable<dynamic>;
+    var averageSum = ViewData["AverageSum"];
+    var orderCountByCustomer = ViewData["OrderCountByCustomer"] as IEnumerable<dynamic>;
+}
+
+<h2>Отчет по заказам</h2>
+
+<h3>Общая сумма заказов</h3>
+<p>Общая сумма заказов: @totalSum</p>
+
+<h3>Количество заказов по дате</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Количество заказов</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in orderCountByDate)
+        {
+            <tr>
+                <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Средняя сумма заказов</h3>
+<p>Средняя сумма заказов: @averageSum</p>
+
+<h3>Количество заказов по покупателю</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ФИО покупателя</th>
+            <th>Количество заказов</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in orderCountByCustomer)
+        {
+                <tr>
+                    <td>@item.PokupatelFio</td>
+                    <td>@item.Count</td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<div class="text-center mt-5">
+    <img src="~/images/niz2.jpg" alt="Bottom Image" class="img-fluid" />
+</div>

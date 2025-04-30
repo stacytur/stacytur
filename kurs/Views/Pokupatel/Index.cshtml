@@ -1,0 +1,90 @@
+﻿
+@model IEnumerable<kurs.Models.Pokupatel>
+
+@{
+    ViewData["Title"] = "Список покупателей";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - kurs</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <!-- Подключение вашего CSS файла -->
+    <link rel="stylesheet" href="~/css/table.css" />
+</head>
+
+<h1>Список покупателей</h1>
+
+<a asp-controller="Pokupatel" asp-action="Create" class="btn btn-primary">Добавить нового покупателя</a>
+
+<form asp-action="Index" method="get" class="form-inline mb-3">
+    <div class="form-group mr-2">
+        <label for="searchPhone" class="mr-2">Search by Phone:</label>
+        <input type="text" name="searchPhone" id="searchPhone" value="@ViewData["CurrentSearchPhone"]" class="form-control" />
+    </div>
+    <div class="form-group mr-2">
+        <label for="searchName" class="mr-2">Search by Name:</label>
+        <input type="text" name="searchName" id="searchName" value="@ViewData["CurrentSearchName"]" class="form-control" />
+    </div>
+    <div class="form-group mr-2">
+        <label for="searchAddress" class="mr-2">Search by Address:</label>
+        <input type="text" name="searchAddress" id="searchAddress" value="@ViewData["CurrentSearchAddress"]" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Reset</a>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+             <th><a asp-action="Index" asp-route-sortOrder="@ViewData["IdSortParm"]">ID</a></th>
+            <th>
+           
+
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" >
+                    @Html.DisplayNameFor(model => model.PokupatelFio)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["PhoneSortParm"]" >
+                    @Html.DisplayNameFor(model => model.PokupatelTelefon)
+                </a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["AddressSortParm"]" >
+                    @Html.DisplayNameFor(model => model.PokupatelAdresDostavki)
+                </a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPokupatel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PokupatelFio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PokupatelTelefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PokupatelAdresDostavki)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdPokupatel" class="btn btn-info">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.IdPokupatel" class="btn btn-danger">Delete</a>
+                    <a asp-controller="Pokupatel" asp-action="Orders" asp-route-id="@item.IdPokupatel" class="btn btn-primary">View Orders</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- Изображение внизу страницы -->
+<div class="text-center mt-5">
+    <img src="~/images/niz1.jpg" alt="Bottom Image" class="img-fluid" />
+</div>

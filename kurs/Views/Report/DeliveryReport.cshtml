@@ -1,0 +1,132 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*@model IEnumerable<DeliveryReportViewModel>
+
+@{
+    ViewData["Title"] = "Отчеты по доставкам";
+}
+
+<h2>Отчеты по доставкам</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Доставки</th>
+            <th>Дата получения</th>
+            <th>Ожидаемая дата</th>
+            <th>Статус доставки</th>
+            <th>Количество заказов</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.IdDostavka</td>
+                <td>@report.DataPolucheniya.ToString("dd.MM.yyyy")</td>
+                <td>@report.OjdaemayaData.ToString("dd.MM.yyyy")</td>
+                <td>@report.StatusDostavki</td>
+                <td>@report.OrderCount</td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+@*@model IEnumerable<DeliveryReportViewModel>
+
+@{
+    ViewData["Title"] = "Отчеты по доставкам";
+
+    // Группируем отчеты по статусу доставки
+    var groupedReports = Model.GroupBy(report => report.StatusDostavki);
+}
+
+<h2>Отчеты по доставкам</h2>
+
+@foreach (var group in groupedReports)
+{
+    <h3>@group.Key</h3> <!-- Заголовок для каждого статуса доставки -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Доставки</th>
+                <th>Дата получения</th>
+                <th>Ожидаемая дата</th>
+                <th>Статус доставки</th>
+                <th>Количество заказов</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var report in group)
+            {
+                <tr>
+                    <td>@report.IdDostavka</td>
+                    <td>@report.DataPolucheniya.ToString("dd.MM.yyyy")</td>
+                    <td>@report.OjdaemayaData.ToString("dd.MM.yyyy")</td>
+                    <td>@report.StatusDostavki</td>
+                    <td>@report.OrderCount</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"><strong>Сумма заказов:</strong></td>
+                <td><strong>@group.Sum(r => r.OrderCount)</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+}
+
+<h3>Общая сумма заказов по всем доставкам:</h3>
+<p><strong>@Model.Sum(r => r.OrderCount)</strong></p>*@
+@model IEnumerable<DeliveryReportViewModel>
+
+@{
+    ViewData["Title"] = "Отчеты по доставкам";
+
+    // Группируем отчеты по статусу доставки
+    var groupedReports = Model.GroupBy(report => report.StatusDostavki);
+}
+
+<h2>Отчеты по доставкам</h2>
+
+@foreach (var group in groupedReports)
+{
+    <h3>@group.Key</h3> <!-- Заголовок для каждого статуса доставки -->
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Доставки</th>
+                <th>Дата получения</th>
+                <th>Ожидаемая дата</th>
+                <th>Статус доставки</th>
+                <th>Количество заказов</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var report in group)
+            {
+                <tr>
+                    <td>@report.IdDostavka</td>
+                    <td>@report.DataPolucheniya.ToString("dd.MM.yyyy")</td>
+                    <td>@report.OjdaemayaData.ToString("dd.MM.yyyy")</td>
+                    <td>@report.StatusDostavki</td>
+                    <td>@report.OrderCount</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"><strong>Сумма доставок:</strong></td>
+                <td><strong>@group.Count()</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+}
+
+<h3>Общая сумма доставок по всем статусам:</h3>
+<p><strong>@Model.Count()</strong></p>

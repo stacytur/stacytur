@@ -1,0 +1,99 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Фотогалерея";
+}
+
+<style>
+    body {
+        background-color: #e9f3ee; /* Нежно-розовый задний  фон */
+        color: #5e1942; /* Темный текст */
+        font-family: 'Dancing Script', cursive; /* Читабельный изящный шрифт */
+    }
+
+
+    .container {
+        margin-top: 50px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #FF69B4; /* Яркий розовый цвет */
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: #4A4A4A; /* Темный текст */
+    }
+
+    .custom-img {
+        max-height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+    }
+
+        .custom-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .table-link {
+        text-decoration: none;
+        color: #4A4A4A; /* Темный текст */
+    }
+
+    .caption {
+        font-size: 1.2rem;
+        color: #4A4A4A; /* Темный текст */
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="subtitle">Нажмите на изображение для просмотра таблицы</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Index", "Pokupatel")" class="table-link">
+                <img src="~/images/tabl4.jpg" alt="Фото 1" class="img-fluid custom-img" />
+                <p class="caption">Таблица покупателей</p>
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Index", "Dostavka")" class="table-link">
+                <img src="~/images/tabl2.jpg" alt="Фото 2" class="img-fluid custom-img" />
+                <p class="caption">Таблица доставки</p>
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Index", "SborschikZakaza")" class="table-link">
+                <img src="~/images/tabl3.jpg" alt="Фото 3" class="img-fluid custom-img" />
+                <p class="caption">Таблица сборщиков заказов</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Index", "Tovar")" class="table-link">
+                <img src="~/images/tabl1.jpg" alt="Фото 4" class="img-fluid custom-img" />
+                <p class="caption">Таблица товаров</p>
+            </a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a href="@Url.Action("Index", "Zakaz")" class="table-link">
+                <img src="~/images/tabl5.jpg" alt="Фото 5" class="img-fluid custom-img" />
+                <p class="caption">Таблица заказов</p>
+            </a>
+        </div>
+    </div>
+</div>
